@@ -1,12 +1,11 @@
 import subprocess
 from time import sleep
-def get_flag():
-    return "PFE6FLXJMD1YDWCXIOL0V7GC9T0A9QT="
+
 
     
 while True:   
     p = subprocess.Popen("python3 s.py", shell=True)
-    sleep(120)
+    sleep(60)
     with open("flag_pwn1.txt","r") as f:
         lines=f.readlines()
         for line in lines:
@@ -19,4 +18,4 @@ while True:
                 print(cmd_query)
                 sleep(5)
                 p = subprocess.Popen(cmd_query, shell=True)
-    sleep(300)
+    sleep(120)
