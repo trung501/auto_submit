@@ -4,7 +4,7 @@ from time import sleep
     
 while True:
     flag=[]
-    for i in range(1,21):
+    for i in range(20,0,-1):
         if i==5:
             continue
         try:
