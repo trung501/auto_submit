@@ -14,8 +14,8 @@ while True:
                 data=[]
                 for line in f:
                     data.append(line)
-                print("******************************i: ",i,data[-9]) 
-                flag.append(data[-9])
+                print("******************************i: ",i,data[-8]) 
+                flag.append(data[-8])
         except:
             print("error get flag")
             sleep(5) 
