@@ -17,5 +17,6 @@ while True:
                         f"""-H 'Content-Length: 36' -H 'Content-Type: application/json' --data-binary """  \
                         f"""'["{line}"]' 'http://10.254.0.253:8080/flags' """
                 print(cmd_query)
+                sleep(5)
                 p = subprocess.Popen(cmd_query, shell=True)
     sleep(300)
