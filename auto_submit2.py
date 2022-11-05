@@ -2,6 +2,8 @@ import subprocess
 from time import sleep
     
 while True:   
+    p = subprocess.Popen("python3 s.py", shell=True)
+    sleep(60)  
     with open("pwn2.txt","r") as f:
         lines=f.readlines()
         for line in lines:
