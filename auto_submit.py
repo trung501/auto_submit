@@ -24,5 +24,5 @@ while True:
                     sleep(5)
             except:
                 print("error curl")
-                sleep(30) 
+                sleep(5) 
     sleep(120)
