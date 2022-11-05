@@ -5,6 +5,8 @@ def get_flag():
 
     
 while True:   
+    p = subprocess.Popen("python3 s.py", shell=True)
+    sleep(120)
     with open("flag_pwn1.txt","r") as f:
         lines=f.readlines()
         for line in lines:
@@ -16,4 +18,4 @@ while True:
                         f"""'["{line}"]' 'http://10.254.0.253:8080/flags' """
                 print(cmd_query)
                 p = subprocess.Popen(cmd_query, shell=True)
-    sleep(10)
+    sleep(300)
