@@ -12,7 +12,7 @@ while True:
         for line in lines:
             line=line.replace('\n','').strip()
             if len(line)>0 :
-                cmd_query=f"""curl -i -s -k -X PUT -H 'Host: 10.254.0.253:8080' -H ''Accept-Encoding: gzip, deflate' """ \
+                cmd_query=f"""curl -i -s -k -X PUT -H 'Host: 10.254.0.253:8080' -H 'Accept-Encoding: gzip, deflate' """ \
                         f"""-H 'Accept: /' -H 'Connection: close' -H 'X-Team-Token: e5902a784c4ca765' """ \
                         f"""-H 'Content-Length: 36' -H 'Content-Type: application/json' --data-binary """  \
                         f"""'["{line}"]' 'http://10.254.0.253:8080/flags' """
