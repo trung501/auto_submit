@@ -1,10 +1,7 @@
 import subprocess
 from time import sleep
-
     
 while True:   
-    p = subprocess.Popen("python3 pwn2.py", shell=True)
-    sleep(60)
     with open("pwn2.txt","r") as f:
         lines=f.readlines()
         for line in lines:
@@ -17,4 +14,4 @@ while True:
                 print(cmd_query)
                 sleep(5)
                 p = subprocess.Popen(cmd_query, shell=True)
-    sleep(120)
+    sleep(300)
